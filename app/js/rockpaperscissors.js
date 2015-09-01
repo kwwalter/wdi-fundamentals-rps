@@ -90,6 +90,5 @@ function playToFive() {
     } else if (computerWins === 5) {
         console.log('Computer is the first to five wins!'); 
     }
-    //return [playerWins, computerWins];
 }
 
