@@ -91,4 +91,4 @@ function playToFive() {
         console.log('Computer is the first to five wins!'); 
     }
 }
-
+playToFive(); 
