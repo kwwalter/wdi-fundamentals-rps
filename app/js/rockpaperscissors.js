@@ -91,4 +91,38 @@ function playToFive() {
         console.log('Computer is the first to five wins!'); 
     }
 }
+function playTo(x) {
+    console.log("Let's play Rock, Paper, Scissors"); 
+    var playerWins = 0;
+    var computerWins = 0;
+    var playerMove;
+    var computerMove; 
+    while (playerWins < x && computerWins < x) {
+        playerMove = getPlayerMove();
+        computerMove = getComputerMove(); 
+            if (getWinner(playerMove, computerMove) === 'player') {
+                playerWins += 1; 
+                console.log('Player chose ' + playerMove + ' and Computer chose ' + computerMove); 
+                console.log('The score is currently ' + playerWins + ' to ' + computerWins + "\n"); 
+            } else if (getWinner(playerMove, computerMove) === 'computer') {
+                computerWins += 1; 
+                console.log('Player chose ' + playerMove + ' and Computer chose ' + computerMove); 
+                console.log('The score is currently ' + playerWins + ' to ' + computerWins + "\n"); 
+            } else if (getWinner(playerMove, computerMove) === 'tie') {
+                console.log('Player and Computer both chose ' + playerMove + ', so the result is a tie.');
+                console.log('The score is still ' + playerWins + ' to ' + computerWins + "\n"); 
+            } else {
+                console.log('Invalid selection. Please try again.\n'); 
+            }
+    }
+    if (playerWins == x) {
+        console.log('Player is the first to ' + x + ' wins!'); 
+    } else if (computerWins == x) {
+        console.log('Computer is the first to ' + x + ' wins!'); 
+    } 
+}
 playToFive(); 
+/* Use the three lines below if you want to choose the number of games required to win. */
+//console.log("Please enter how many wins are needed to win the game.");
+//x = prompt();
+//playTo(x);
